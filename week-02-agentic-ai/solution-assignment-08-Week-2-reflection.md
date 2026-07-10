@@ -46,7 +46,8 @@ You can publish your blog on:
 
 #### Screenshot 1 — Blog published and visible
 
-Add your screenshot here.
+
+![alt text](screenshots/medium-blog.png)
 
 ---
 
@@ -54,7 +55,7 @@ Add your screenshot here.
 
 Blog Link:
 
-`__________________________________________`
+`https://medium.com/p/8072aa8d903e?postPublishedType=initial`
 
 ---
 
@@ -92,7 +93,7 @@ P.S. This post is a part of DevOps Micro Internship with Agentic AI Cohort-3 by 
 
 #### Screenshot 2 — LinkedIn post published
 
-Add your screenshot here.
+![alt text](<screenshots/LinkedIn post.png>)
 
 ---
 
@@ -101,14 +102,37 @@ Add your screenshot here.
 LinkedIn Post Content (copy-paste here):
 
 ```
-Paste your LinkedIn post content here
+Instead of treating AI as just a tool for getting answers to my questions, I explored how Claude Code can be extended with custom skills to automate DevOps workflows while maintaining strict control over what AI is allowed to do.
+
+I built a local skills system by creating the .claude/skills/ directory structure and organizing multiple predefined skills. I also explored how each skill can be configured with specific permissions, learning that not every AI agent should have unrestricted access to files or commands. Defining allowed tools and disabling unnecessary capabilities helps create safer and more predictable automation.
+
+I then put these concepts into practice by running the /scaffold-terraform skill, which automatically generated a complete Terraform project structure. Instead of manually creating directories and configuration files, the skill produced a ready-to-use infrastructure template, demonstrating how AI can accelerate repetitive setup tasks.
+
+After generating the project, I initialized the Terraform configuration with terraform init and executed the /tf-plan skill. Watching Claude analyze the Terraform plan highlighted how AI can go beyond simply running commands by helping interpret results and providing meaningful feedback throughout the infrastructure deployment workflow.
+
+This has reinforced several key concepts:
+✅ Building reusable AI skills for development workflows
+✅ Organizing and managing Claude Code skills effectively
+✅ Applying permission-based controls to AI agents
+✅ Automating Terraform project scaffolding
+✅ Using AI to assist with Infrastructure as Code workflows
+✅ Understanding how structured automation improves consistency and developer productivity
+
+This has made me realize how AI can become a practical engineering assistant when combined with well-designed workflows and clear operational boundaries.
+
+A sincere thank you to my co-mentors Anjana Muthunayake, Faith Samson, Joy Ukpabi and Rukevwe ubioworo for their constant support.
+
+P.S. This post is a part of DevOps Micro Internship with Agentic AI Cohort-3 by Pravin Mishra. You can start your DevOps journey by joining this Discord community ( https://lnkd.in/ghGDsqc2 ).
+
+
+#DevOps #Terraform #InfrastructureAsCode #ClaudeCode #AgenticAI #DMIByPravinMishra #AIEngineering #CloudComputing #Automation #GitHub #LearningInPublic #DMI #CloudAdvisory
 ```
 
 ---
 
 ### LinkedIn Post Link:
 
-`__________________________________________`
+`https://www.linkedin.com/feed/update/urn:li:activity:7481316464147238912/`
 
 ---
 
