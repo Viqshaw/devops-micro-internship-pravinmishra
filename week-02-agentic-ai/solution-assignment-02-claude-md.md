@@ -20,9 +20,9 @@ Capture Claude’s response before `CLAUDE.md` exists in the project to establis
 
 #### Screenshot 1 — Claude’s generic response before CLAUDE.md exists (project contains only `index.html`, `style.css`, `images/`, `README.MD`, `privacy.html`, `terms.html`)
 
-![Project detail.](screenshots\project-detail-1-of-2.png)
+![Project detail](screenshots/project-detail-1-of-2.png)
 
-![Project deatil.](screenshots\project-detail-2-of-2.png)
+![Project deatil](screenshots/project-detail-2-of-2.png)
 
 ---
 
