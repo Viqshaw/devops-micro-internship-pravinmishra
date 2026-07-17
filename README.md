@@ -132,7 +132,7 @@ Week 02 → Agentic AI with Claude Code
 |------|-------|--------|------------|---------------|-----------|
 | 00 | Internet & Networking Basics | ⬜ Not Started | ⏳ Pending | — | — |
 | 01 | Success Mindset | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_join-the-dmi-devops-micro-internship-share-7478104461274468352--tZQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/p/d5fa960106a7?postPublishedType=initial |
-| 02 | Agentic AI with Claude Code | ✅ Completed | ✅ Solved | https://www.linkedin.com/feed/update/urn:li:activity:7481316464147238912/ | https://medium.com/p/8072aa8d903e?postPublishedType=initial |
+| 02 | Agentic AI with Claude Code | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-terraform-infrastructureascode-ugcPost-7481316460955373568-8qIc/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/p/8072aa8d903e?postPublishedType=initial |
 | 03 | Linux & Bash for DevOps | 🔄 In Progress | ⏳ Pending | — | — |
 | 04 | Git & GitHub | ⬜ Not Started | ⏳ Pending | — | — |
 | 05 | DevOps Lifecycle & Agile | ⬜ Not Started | ⏳ Pending | — | — |
