@@ -132,7 +132,7 @@ P.S. This post is a part of DevOps Micro Internship with Agentic AI Cohort-3 by 
 
 ### LinkedIn Post Link:
 
-`https://www.linkedin.com/feed/update/urn:li:activity:7481316464147238912/`
+`https://www.linkedin.com/posts/tonye-bagshaw_devops-terraform-infrastructureascode-ugcPost-7481316460955373568-8qIc/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck`
 
 ---
 
