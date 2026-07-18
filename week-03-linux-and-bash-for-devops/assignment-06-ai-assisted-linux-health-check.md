@@ -111,7 +111,6 @@ Answer the following in your own words:
 
 **1. Which part of this task represents the Gather phase?**
 The Gather phase is when Claude used read-only commands like systemctl, ss, curl, df, and free to collect information about the server without making any changes.
-Add your answer here.
 
 ---
 
