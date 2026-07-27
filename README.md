@@ -79,8 +79,8 @@ Week 02 → Agentic AI with Claude Code
 Week 03 → Linux & Bash for DevOps
 [![Week 03 – Linux & Bash](./badges/week-03.svg)](./week-03-linux-and-bash-for-devops/)
 
-<!-- Week 04 → Git & GitHub -->
-<!-- [![Week 04 – Git](./badges/week-04.svg)](./week-04-github/) -->
+Week 04 → Git & GitHub
+[![Week 04 – Git](./badges/week-04.svg)](./week-04-github/)
 
 <!-- Week 05 → DevOps Lifecycle & Agile -->
 <!-- [![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/) -->
@@ -134,7 +134,7 @@ Week 03 → Linux & Bash for DevOps
 | 01 | Success Mindset | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_join-the-dmi-devops-micro-internship-share-7478104461274468352--tZQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/p/d5fa960106a7?postPublishedType=initial |
 | 02 | Agentic AI with Claude Code | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-terraform-infrastructureascode-ugcPost-7481316460955373568-8qIc/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/p/8072aa8d903e?postPublishedType=initial |
 | 03 | Linux & Bash for DevOps | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-linux-ubuntu-ugcPost-7483994242852216833-ew1G/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/from-linux-commands-to-ai-assisted-incident-response-my-week-of-building-safer-devops-workflows-6085bf2fd783 |
-| 04 | Git & GitHub | ⬜ Not Started | ⏳ Pending | — | — |
+| 04 | Git & GitHub | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-git-github-ugcPost-7487519572166754304-4SMo/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/from-git-beginner-to-practical-collaboration-my-journey-learning-git-github-through-hands-on-9696e6c5a593 |
 | 05 | DevOps Lifecycle & Agile | ⬜ Not Started | ⏳ Pending | — | — |
 | 06 | AWS Cloud | ⬜ Not Started | ⏳ Pending | — | — |
 | 07 | Azure Cloud | ⬜ Not Started | ⏳ Pending | — | — |
