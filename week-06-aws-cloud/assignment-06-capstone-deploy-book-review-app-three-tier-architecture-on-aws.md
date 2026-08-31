@@ -34,13 +34,13 @@ Record the AWS Region used and list every AWS service used across networking, co
 
 **Region:**
 
-Write your answer here.
+us-north-1
 
 ---
 
 **Services:**
 
-Write your answer here.
+VPC (Virtual Private Cloud) Subnets (6 total: 2 public, 4 private) Internet Gateway Route Tables (Public + Private) EC2 Instances (2: Web Tier + App Tier) Application Load Balancer (2: Public + Internal) Security Groups (5: web-alb-sg, web-sg, internal-alb-sg, app-sg, db-sg) RDS MySQL (Single-AZ) NAT Gateway (temporary, for package installation — deleted)
 
 ---
 
@@ -56,7 +56,7 @@ Confirm the Book Review App loads through the public ALB DNS name.
 
 Paste your public ALB DNS name here:
 
-`Add your URL here`
+`http://book-review-web-alb-2118317198.eu-north-1.elb.amazonaws.com/`
 
 ---
 
@@ -70,37 +70,37 @@ Capture visual proof of every tier and load balancer.
 
 #### Web EC2
 
-Add your screenshot here.
+![alt text](screenshots/06.4.1-web-ec2.png)
 
 ---
 
 #### App EC2
 
-Add your screenshot here.
+![alt text](screenshots/06.4.2-app-ec2.png)
 
 ---
 
 #### Public ALB
 
-Add your screenshot here.
+![alt text](screenshots/06.4.3-pub-alb.png)
 
 ---
 
 #### Internal ALB
 
-Add your screenshot here.
+![alt text](screenshots/06.4.4-pri-alb.png)
 
 ---
 
 #### RDS + Replica
 
-Add your screenshot here.
+![alt text](screenshots/06.4.5-rds.png)
 
 ---
 
 #### App UI proof
 
-Add your screenshot here.
+![alt text](screenshots/06.4.6-app-UI.png)
 
 ---
 

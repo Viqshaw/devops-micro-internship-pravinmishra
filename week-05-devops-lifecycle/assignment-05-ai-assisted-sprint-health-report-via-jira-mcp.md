@@ -26,7 +26,13 @@ Generate an API token from your Atlassian account that the MCP server will use t
 
 Why does the MCP server need your site URL and account email in addition to the token?
 
-Add your answer here
+Add your answeBecause each one has a different job:
+
+Site URL: tells the MCP server which Jira site to connect to.
+Email: tells Jira which account you're using.
+Token: proves you have permission to use that account.
+
+Simple: URL = where, email = who, token = authorization.r here
 
 ---
 
