@@ -114,19 +114,43 @@ Summarize what worked in the final deployment, the issues encountered and how ea
 
 **What worked:**
 
-Write your answer here.
+The final deployment successfully connected the application components across the AWS environment. The Express backend was running on port 3001, and the backend successfully connected to the book_review_db database using SSL. Database schema updates completed successfully. Nginx was also running and serving HTTP traffic on port 80. The backend API returned HTTP/1.1 200 OK when accessed directly, confirming that the Express application was responding correctly.
 
 ---
 
 **Issues + fixes:**
 
-Write your answer here.
+Backend Target Group was unhealthy: The backend application was running on port 3001, so the Target Group and backend networking had to be configured to allow traffic to that port.
+
+Backend had multiple Node.js processes: Two instances of server.js were running, causing a port conflict. PM2 reported EADDRINUSE: address already in use :::3001. The manually running Node process was identified and stopped so that PM2 could manage the backend correctly.
+
+PM2 backend entered an errored state: PM2 was repeatedly trying to start the application while port 3001 was already occupied. The conflicting process was removed and the backend was restarted under PM2.
+
+API URL contained a duplicated path: The frontend request showed /api/api/books. This was identified as a likely API/Nginx path configuration issue requiring verification of the frontend API URL and Nginx location/proxy_pass configuration.
 
 ---
 
 **Tools/sources used:**
 
-Write your answer here.
+AWS EC2 for instance, networking, security group, and deployment configuration.
+
+AWS VPC for subnet route tables and NAT Gateway configuration.
+
+AWS Target Groups / Load Balancer for backend health-check troubleshooting.
+
+Nginx for reverse proxying and investigating the 504 Gateway Time-out.
+
+PM2 for managing the Node.js backend process and viewing application/error logs.
+
+Node.js / Express for the backend API.
+
+MySQL database for the application database.
+
+Ubuntu/Linux CLI for system and network diagnostics.
+
+ss, lsof, ps, curl, ip route, and apt for troubleshooting processes, ports, connectivity, routing, and package updates.
+
+Application and PM2 logs to identify the EADDRINUSE port conflict and confirm successful database connectivity.
 
 ---
 
@@ -142,13 +166,13 @@ Publish a LinkedIn post sharing the capstone deployment, including the public AL
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+`https://lnkd.in/p/d4xuJVgT`
 
 ---
 
 #### Screenshot of LinkedIn post
 
-Add your screenshot here.
+![alt text](screenshots/06.4.7-linkedin.png)
 
 ---
 
