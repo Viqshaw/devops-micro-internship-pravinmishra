@@ -30,13 +30,13 @@ Confirm successful Azure Portal access and Locate the required services and subs
 
 #### Screenshot 1 — Azure Portal homepage after successful login
 
-Add your screenshot here.
+![alt text](screenshots/01.1.1-az-homepage.png)
 
 ---
 
 #### Screenshot 2 — "Subscriptions" section showing the "Free Trial" subscription
 
-Add your screenshot here.
+![alt text](screenshots/01.2.1-az-free.png)
 
 ---
 
@@ -44,7 +44,7 @@ Add your screenshot here.
 
 Write a three-to-four-line paragraph explaining which Azure services you plan to explore first and why.
 
-Write your answer here.
+I plan to explore Azure Virtual Machines, Blob Storage, Azure SQL Database, and Virtual Network services first, and compare the difference and similarities with aws.
 
 ---
 
