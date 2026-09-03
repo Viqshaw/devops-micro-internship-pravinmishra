@@ -24,13 +24,13 @@ Confirm your AWS CLI is authenticated and can see the S3 bucket, EC2 instance(s)
 
 #### Screenshot 1 — Output of `aws s3 ls`, the EC2 instance table, and the RDS instance table (blur the Account ID if visible)
 
-Add your screenshot here.
+![alt text](screenshots/07.1.1-s3.png)
 
 ---
 
 #### Screenshot 2 — Output of `pwd` and `find . -maxdepth 4 -type d | sort`
 
-Add your screenshot here.
+![alt text](screenshots/07.1.2-pwd.png)
 
 ---
 
@@ -38,11 +38,12 @@ Add your screenshot here.
 
 **1. Which resources from this week's earlier assignments did you see in the listings?**
 
-Write your answer here.
+I verified that my S3 buckets were visible. I also confirmed that both Book Review App EC2 instances were present, with `i-0448eb57512f11b5c` serving as the web tier and `i-0a294d4c569b88d51` serving as the app tier. Additionally, the `bookreview-db` RDS instance was visible and had an **Available** status.
+
 
 **2. Why must you confirm your resources exist before writing an audit script against them?**
 
-Write your answer here.
+Because an audit script needs to query real AWS resources. Confirming that the resources exist first helps ensure the script uses the correct resource names, IDs, regions, and services. It also prevents errors, auditing the wrong resources, or getting misleading results because a resource is missing or configured differently than expected
 
 ---
 
@@ -56,7 +57,7 @@ Create a `CLAUDE.md` in your workspace that tells Claude the audit script is rea
 
 #### Screenshot 3 — `CLAUDE.md` open in VS Code showing all four sections
 
-Add your screenshot here.
+![alt text](screenshots/07.2.1-claude-md.png)
 
 ---
 
@@ -64,11 +65,31 @@ Add your screenshot here.
 
 **1. Why should Claude never be given permission to run `revoke-security-group-ingress` itself, even if the fix is obviously correct?**
 
-Write your answer here.
+Today 11:41 PM
+I saw my S3 buckets, including the new philip-aws-audit-2026 bucket created for this audit, along with my two Book Review App EC2 instances (i-0cdca51b1213b0049 web-tier and i-0a7302ae6892c36ea app-tier), and my RDS instance bookreview-db with status available.  
+
+rewrite this
+
+Here’s a cleaner, more professional version:
+
+I was able to view my S3 buckets, including the newly created philip-aws-audit-2026 bucket for this audit. I also confirmed my two Book Review App EC2 instances, i-0cdca51b1213b0049 (web tier) and i-0a7302ae6892c36ea (app tier), as well as the bookreview-db RDS instance, which was showing an Available status.
+
+I can also 
+make it sound more like a DevOps internship report if you want.
+
+**2. Why must you confirm your resources exist before writing an audit script against them?**
+
+Because an audit script needs to query real AWS resources. Confirming that the resources exist first helps ensure the script uses the correct resource names, IDs, regions, and services. It also prevents errors, auditing the wrong resources, or getting misleading results because a resource is missing or configured differently than expected.
+
+**1. Why should Claude never be given permission to run `revoke-security-group-ingress` itself, even if the fix is obviously correct?**
+
+Because revoke-security-group-ingress changes AWS network access, and an incorrect or unintended change could immediately block legitimate traffic or break an application.
+
+Claude should therefore identify the issue and recommend the correct command, but a human should review and approve the change before it is executed. This follows the principle of keeping destructive or security-sensitive actions under human control.
 
 **2. Which rule prevents Claude from claiming a finding that the report does not support?**
 
-Write your answer here.
+The Safety Rule "Do not claim a finding unless the report contains supporting evidence"
 
 ---
 
@@ -82,7 +103,11 @@ Ask Claude Code to propose a read-only audit plan covering five checks — S3 pu
 
 #### Screenshot 4 — Claude Code showing the five-check plan
 
-Add your screenshot here.
+![alt text](screenshots/07.3.1.1-audit-plan.png)
+
+![alt text](screenshots/07.3.1.2-audit-plan.png)
+
+![alt text](screenshots/07.3.1.3-audit-plan.png)
 
 ---
 
@@ -90,11 +115,11 @@ Add your screenshot here.
 
 **1. Which part of this task represents the Gather phase?**
 
-Write your answer here.
+The actual Gather phase happens later, when the Bash script runs the describe-* calls against my live AWS account.
 
 **2. Did every proposed command start with `describe-`, `get-`, or `list-`? Why does that matter?**
 
-Write your answer here.
+Yes, all five commands ran successfully. This is important because the describe-* prefixes follow AWS's standard convention for read-only operations. They only retrieve information and do not make changes to AWS resources, providing an extra layer of protection
 
 ---
 
@@ -110,19 +135,19 @@ Make it executable and confirm it has no syntax errors.
 
 #### Screenshot 5 — Top section of `aws-audit.sh` showing the variables and the checks array
 
-Add your screenshot here.
+![alt text](screenshots/07.4.1-top.png)
 
 ---
 
 #### Screenshot 6 — One check function (for example `check_ssh_open_to_world`) showing the AWS CLI call and conditional
 
-Add your screenshot here.
+![alt text](screenshots/07.4.2-checkssh.png)
 
 ---
 
 #### Screenshot 7 — Output of `bash -n scripts/aws-audit.sh` and `ls -l scripts/aws-audit.sh`
 
-Add your screenshot here.
+![alt text](screenshots/07.4.3-output.png)
 
 ---
 
@@ -130,15 +155,29 @@ Add your screenshot here.
 
 **1. What is stored in the checks array, and how does the loop use it?**
 
-Write your answer here.
+The checks array stores the names or commands for the different checks the Bash script needs to run.
+
+The loop goes through each item in the array one at a time, runs the corresponding check, and collects or processes the result. This avoids writing the same code repeatedly for every check.
+
+In simple terms: the array holds the checks, and the loop runs each check automatically.
 
 **2. Why does every AWS CLI call in this script use `--query` and `--output text` instead of parsing raw JSON?**
 
-Write your answer here.
+Because --query lets the script extract only the specific fields it needs, while --output text converts the result into simple, readable text.
+
+This makes the Bash script easier to work with because it avoids having to parse complicated JSON structures with tools like jq.
+
+In simple terms: --query selects the data, and --output text formats it for easy use in Bash.
 
 **3. Why does the script use different exit codes for HEALTHY, WARN, and FAIL?**
 
-Write your answer here.
+Different exit codes let other scripts, monitoring systems, or CI/CD tools quickly understand the health status without having to read the report itself.
+
+HEALTHY → all checks passed, so the script exits successfully.
+WARN → something needs attention but isn't necessarily an immediate failure.
+FAIL → a critical check failed and requires action.
+
+In simple terms: the exit code turns the overall health status into a machine-readable signal that other tools can act on.
 
 ---
 
@@ -152,13 +191,13 @@ Run the script against your live AWS account and capture the current state befor
 
 #### Screenshot 8 — Output of `./scripts/aws-audit.sh` showing your Full Name and all five checks
 
-Add your screenshot here.
+![alt text](screenshots/07.5.1-runscript.png)
 
 ---
 
 #### Screenshot 9 — Output showing the captured exit code and final summary
 
-Add your screenshot here.
+![alt text](screenshots/07.4.3-output.png)
 
 ---
 
@@ -166,15 +205,15 @@ Add your screenshot here.
 
 **1. What is the overall status of your baseline audit?**
 
-Write your answer here.
+Overall status: FAIL
 
 **2. Did any check return FAIL or WARN? If so, which one, and what evidence did it show?**
 
-Write your answer here.
+Yes — SSH (port 22) FAILED with 2 security groups open to 0.0.0.0/0; EBS encryption WARNED with 2 unencrypted volumes
 
 **3. If every check passed, what does that tell you about the security posture of your account so far?**
 
-Write your answer here.
+In my case, every check did not pass as I had 2 ssh security groups open to the internet
 
 ---
 
@@ -188,13 +227,17 @@ Turn the script into a Claude Code skill named `/aws-audit` that runs the script
 
 #### Screenshot 10 — `SKILL.md` showing the frontmatter, tool restrictions, and safety rules
 
-Add your screenshot here.
+![alt text](screenshots/07.6.1-skillmd.png)
 
 ---
 
 #### Screenshot 11 — `/aws-audit` output showing findings, cost/risk impact, and a recommended remediation command (or a clean report if your baseline passed everything)
 
-Add your screenshot here.
+![alt text](screenshots/07.6.2.1-aws-audit.png)
+
+![alt text](screenshots/07.6.2.2-aws-audit.png)
+
+![alt text](screenshots/07.6.2.3-aws-audit.png)
 
 ---
 
@@ -202,15 +245,18 @@ Add your screenshot here.
 
 **1. Why does this skill have Bash, Read, and Grep, but not Write?**
 
-Write your answer here.
+Because the skill is designed to inspect and diagnose, not directly modify files.
 
 **2. What part is performed by Bash, and what part is performed by Claude?**
 
-Write your answer here.
+Bash performs the actual data gathering and checks, while Claude interprets the results.
+
+Bash → runs the AWS CLI commands, collects the required information, performs the checks, and produces the report.
+Claude → reads the report, analyzes the results, identifies what looks wrong, explains the likely cause, and recommends a safe next step.
 
 **3. Why is estimating cost/risk impact something the AI adds on top of a plain PASS/FAIL script?**
 
-Write your answer here.
+A Bash script can only compare values and print a fixed string — it can't reason about consequences. Judging that an open SSH port risks brute-force attacks versus an unencrypted EBS volume being a compliance issue rather than a billing one requires contextual judgment a rule-based script doesn't have.
 
 ---
 
@@ -224,13 +270,13 @@ Pick one real finding from your baseline report (or deliberately open a security
 
 #### Screenshot 12 — Output of the `revoke-security-group-ingress` and `authorize-security-group-ingress` commands you ran yourself
 
-Add your screenshot here.
+![alt text](screenshots/07.7.1-revoke.png)
 
 ---
 
 #### Screenshot 13 — Rerun of `./scripts/aws-audit.sh` showing the finding is now PASS
 
-Add your screenshot here.
+![alt text](screenshots/07.7.2-audit.png)
 
 ---
 
@@ -238,19 +284,27 @@ Add your screenshot here.
 
 **1. Which exact finding did you fix, and what command did you run?**
 
-Write your answer here.
+SSH port 22 open to 0.0.0.0/0 across 15 security group, I then used aws ec2 revoke-security-group-ingress to remove the 0.0.0.0/0 rule, then aws ec2 authorize-security-group-ingress to scope SSH access to your own IP
 
 **2. Why did you scope the new rule to your own IP address instead of leaving it open to `0.0.0.0/0`?**
 
-Write your answer here.
+Because allowing 0.0.0.0/0 would make the port accessible from anywhere on the internet, which unnecessarily increases the attack surface.
+
+Scoping the rule to my own IP address means only my connection can access the resource. It follows the principle of least privilege by allowing only the access that is actually needed.
 
 **3. Did Claude execute the remediation command, or did you? Why does that matter?**
 
-Write your answer here.
+I did the remediation myself, not Claude. This matters because Claude should not have permission to make infrastructure changes on its own. Keeping the remediation under human control prevents an AI from making an incorrect or risky change without approval.
+
+It follows the principle: Claude recommends the fix, but the human decides and executes it.
 
 **4. Which phase of the Agentic Loop does the Bash script represent? Which phase does Claude's explanation represent? Which phase is you running the fix?**
 
-Write your answer here.
+Bash script → Gather / Observe phase. It collects the information and checks the current state.
+Claude's explanation → Analyze phase. It interprets the results and explains what they mean.
+You running the fix → Act / Remediate phase. You make the actual change to resolve the issue.
+
+So, in short: Bash gathers → Claude analyzes → You remediate.
 
 ---
 
@@ -277,13 +331,13 @@ Suggested tags:
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+`https://lnkd.in/p/dfYyNAhi`
 
 ---
 
 #### Screenshot of Published LinkedIn Post
 
-Add your screenshot here.
+![alt text](screenshots/07.7.3-linkedin.png)
 
 ---
 
