@@ -36,7 +36,7 @@ Confirm successful Azure Portal access and Locate the required services and subs
 
 #### Screenshot 2 — "Subscriptions" section showing the "Free Trial" subscription
 
-![alt text](screenshots/01.2.1-az-free.png)
+![alt text](screenshots/01.1.2-az-free.png)
 
 ---
 
