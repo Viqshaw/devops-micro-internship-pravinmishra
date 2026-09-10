@@ -20,7 +20,7 @@ Confirm your Azure CLI is authenticated and can see the VM, network, storage acc
 
 #### Screenshot 1 — `az account show` and `az vm list -d -o table` confirming your subscription and running VM (subscription ID partially blurred)
 
-Add your screenshot here.
+![alt text](screenshots/07.1.1-az-account-show.png)
 
 ---
 
@@ -34,7 +34,7 @@ Create a `CLAUDE.md` for this workspace that tells Claude what the audit covers 
 
 #### Screenshot 2 — `CLAUDE.md` open in your editor showing the project overview, audit workflow, and safety rules
 
-Add your screenshot here.
+![alt text](screenshots/07.2.1-claudemd.png)
 
 ---
 
@@ -48,7 +48,9 @@ Ask Claude Code to read `CLAUDE.md` and propose a read-only, four-check audit pl
 
 #### Screenshot 3 — Claude Code showing the four-check plan, with no files created or modified
 
-Add your screenshot here.
+![alt text](screenshots/07.3.1.1-auditplan.png)
+
+![alt text](screenshots/07.3.1.2-auditplan.png)
 
 ---
 
@@ -62,13 +64,13 @@ Write a Bash script that runs the four checks from Task 3 using read-only `az` c
 
 #### Screenshot 4 — Your script open in your editor, showing the check functions and the `az` commands they call
 
-Add your screenshot here.
+![alt text](screenshots/07.4.1-script.png)
 
 ---
 
 #### Screenshot 5 — Output of `bash -n` (no syntax errors) and `ls -l` showing the script is executable
 
-Add your screenshot here.
+![alt text](screenshots/07.4.2-bash.png)
 
 ---
 
@@ -82,7 +84,7 @@ Run the script against your live resources and read the report honestly, even if
 
 #### Screenshot 6 — Script output showing your Full Name and all four checks with a PASS, WARN, or FAIL result
 
-Add your screenshot here.
+![alt text](screenshots/07.5.1-sh.png)
 
 ---
 
@@ -96,13 +98,15 @@ Create a Claude Code skill restricted to read-only tools (no `Write`) that runs 
 
 #### Screenshot 7 — Your skill file's frontmatter showing `allowed-tools` without `Write`
 
-Add your screenshot here.
+![alt text](screenshots/07.6.1-skill.png)
 
 ---
 
 #### Screenshot 8 — `/azure-audit` output showing the baseline findings and Claude's explanation
 
-Add your screenshot here.
+![alt text](screenshots/07.6.2.1-az-audit.png)
+
+![alt text](screenshots/07.6.2.2-az-audit.png)
 
 ---
 
@@ -116,19 +120,19 @@ Pick one WARN or FAIL finding (or deliberately open an NSG rule to port 22 from 
 
 #### Screenshot 9 — Saved report showing the original finding before the fix
 
-Add your screenshot here.
+
 
 ---
 
 #### Screenshot 10 — Terminal output of the remediation command you ran yourself
 
-Add your screenshot here.
+
 
 ---
 
 #### Screenshot 11 — Second `/azure-audit` run (or report) showing the finding resolved
 
-Add your screenshot here.
+
 
 ---
 
@@ -136,7 +140,31 @@ Add your screenshot here.
 
 Compare this assignment to the AWS audit you built in Week 6: which finding categories map to each other across the two clouds, and what stayed exactly the same about the workflow even though the `az`/`aws` commands are completely different?
 
-Add your answer here
+The Azure audit is very similar to the AWS audit from Week 6. The main difference is the cloud provider and the commands used.
+
+The finding categories that map across both clouds are:
+
+Compute: AWS EC2 maps to Azure Virtual Machines.
+
+Network security: AWS Security Groups map to Azure Network Security Groups (NSGs).
+
+Identity and access: AWS IAM maps to Azure RBAC and Entra ID.
+
+Storage: AWS S3 maps to Azure Storage Accounts and Blob Storage.
+
+Database: AWS RDS maps to Azure database services.
+
+Monitoring: AWS CloudWatch maps to Azure Monitor.
+
+Availability: AWS load balancers, Multi-AZ setups and backups map to Azure load balancing, availability options and backups.
+
+What stayed exactly the same was the workflow:
+
+Gather → Analyze → Human Act → Verify.
+
+First, gather read-only information from the cloud environment. Then Claude analyzes the findings and identifies possible problems. The human decides what action should be taken and performs the changes. Finally, the audit is run again to verify the result.
+
+So even though AWS uses commands like "aws ec2 describe-instances" and Azure uses commands like "az vm list", the audit process and safety principle remain the same: Claude can inspect and analyze the environment, while the human remains responsible for making changes.
 
 ---
 
