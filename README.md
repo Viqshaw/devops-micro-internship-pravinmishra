@@ -138,7 +138,7 @@ Week 07 → Azure Cloud
 | 05 | DevOps Lifecycle & Agile | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-aws-ec2-ugcPost-7492001339254833152-nEuU/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/building-a-read-only-ai-sprint-health-skill-with-jira-mcp-df0d0669c8b8?postPublishedType=initial |
 | 06 | AWS Cloud | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_dmibypravinmishra-aws-agenticai-activity-7501416002589462528-eKI2?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/this-week-i-worked-on-an-aws-security-and-cost-audit-project-as-part-of-my-devops-micro-2357e9205f53?postPublishedType=initial |
 | 07 | Azure Cloud | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-azure-cloudsecurity-activity-7503747728506773505-BQdD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/this-week-i-built-an-ai-assisted-azure-security-posture-audit-as-part-of-the-devops-micro-396861519370 |
-| 08 | Terraform | ⬜ Not Started | ⏳ Pending | — | — |
+| 08 | Terraform | 🔄 In Progress | 🔄 In Progress | https://www.linkedin.com/posts/tonye-bagshaw_devops-aws-terraform-ugcPost-7508206426503389184-12qC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | — |
 | 09 | Ansible | ⬜ Not Started | ⏳ Pending | — | — |
 | 10 | Azure DevOps (CI/CD) | ⬜ Not Started | ⏳ Pending | — | — |
 | 11 | Docker | ⬜ Not Started | ⏳ Pending | — | — |
