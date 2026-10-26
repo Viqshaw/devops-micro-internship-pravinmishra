@@ -4,155 +4,119 @@ Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ---
 
-## Purpose (Read This First)
+## Task 1 — A Belief You Hold
 
-This week is not motivation homework.
+### Question
 
-This is you building your **Mindset OS** — the system you will use for the next 5 months (and honestly, for years).
+What is something you believe to be true that most people around you would disagree with?
 
-### Expectations
+Write at least **50 words**. Be honest, specific, and use clear professional sentences.
 
-* Be honest.
-* Be specific.
-* Be practical.
-* Write like an adult professional: clear sentences, no one-liners.
-
-You will reuse this in later weeks. So do it properly once.
-
----
-
-# Assignment 1. What is something you believe to be true that most people around you would disagree with?
-
-### Rules
-
-* No "safe" answers.
-* Must be your real belief (not copied from internet).
-* Minimum 50 words.
-
-**Hint:** What do you believe about career, money, learning, discipline, relationships, health, success, life, tech industry, etc. that most people don't agree with?
-
-## Answer
+### Your Answer
 
 Most people think being professional means having a solid system, a process you follow every time. I don't think that's where good work actually comes from. The best ideas I've ever had came when I threw the process out and just sat with the problem until something clicked. A good system helps you work faster and stay consistent. It does not make the work better.
 Most people around me would disagree. They'd say systems are what let you scale and that waiting for inspiration is unreliable once you're busy. I understand that argument. I just think it mixes up two different things. You can build a system for the repeatable parts of the work. You cannot build a system for the moment you decide what the work should actually be.
 
 ---
 
-# Assignment 2. What are the top 3 objective truths you discovered through experimentation and results?
+## Task 2 — Three Objective Truths Discovered Through Experimentation
 
-### Definition
+Write three objective truths you discovered through your own actions and results. For each truth, include one sentence for the truth and two to four lines of evidence from your life.
 
-Objective truths do not depend on opinions. They hold true regardless of how people feel.
+### Truth #1
 
-Write each truth in this format:
-
-**Truth:** (1 sentence)
-
-**Evidence from my life:** (2–4 lines: what you tried + what happened)
-
----
-
-## Truth #1
-
-### Truth
+**Truth**
 
 Writing tasks down the night before makes me start the next day faster than planning in the morning.
 
-### Evidence from my life
+**Evidence from My Life**
 
 I tried both approaches for a few weeks each. On mornings where I planned fresh, I lost the first 20 to 30 minutes just deciding what to do. On days where the list was already written the night before, I was working within minutes of sitting down.
 
----
+### Truth #2
 
-## Truth #2
-
-### Truth
+**Truth**
 
 Sleep debt affects decision quality more than it affects energy levels.
 
-### Evidence from my life
+**Evidence from My Life**
 
 After a few short nights in a row I didn't feel especially tired, but I noticed I was making small careless mistakes and second guessing simple choices. Once I caught up on sleep, the tiredness wasn't obviously different, but the mistakes stopped.
 
----
+### Truth #3
 
-## Truth #3
-
-### Truth
+**Truth**
 
 Checking messages first thing in the morning changes my mood for the rest of the day more than almost anything else I do.
 
-### Evidence from my life
+**Evidence from My Life**
 
 On mornings I opened my phone right away, I noticed my mood was shaped by whatever the first message happened to be, good or bad. On mornings I waited an hour before checking anything, I felt steadier and more in control regardless of what those messages turned out to be.
 
 ---
 
-# Assignment 3. What does your 2.0 version look like?
+## Task 3 — What Does Your 2.0 Version Look Like?
 
-### Instructions
+Write and publicly publish an article about your future professional self, written as if a journalist is writing about you **3–7 years from now**.
 
-Write as if a journalist is writing about you **3 to 7 years from now** (not 20 years).
+Your article must:
 
-**Minimum 300 words.**
+* Be at least **300 words**.
+* Be written in the **past tense**, as if it has already happened.
+* Include specific proof such as projects, portfolio, GitHub, blogs, certifications, job role, leadership, or community contribution.
+* Be published on LinkedIn, Medium, WordPress, Blogspot, a personal blog, or a portfolio page.
 
-### Rules
+### My Article
 
-* Write in past tense, like it already happened.
-* Don't use "likes to / wants to / hopes to."
-* Use specifics:
+Paste your complete article here...
 
-  * built
-  * shipped
-  * led
-  * published
-  * earned
-  * relocated
-  * contributed
-* Include skills proof:
+### Public Article URL
 
-  * projects
-  * portfolios
-  * GitHub
-  * blogs
-  * certifications
-  * job role
-  * leadership
-  * community contribution
-* Add 1–3 images if you can (optional but powerful).
+```text
+Paste your published article URL here...
+```
 
-### Publish It Publicly On Any ONE
+### LinkedIn Post URL
 
-* LinkedIn
-* Medium
-* WordPress
-* Blogspot
-* Personal blog
-* Portfolio page
+Create a LinkedIn post sharing your published article, then add the URL below.
 
-Use the credit note that matches your track:
+```text
+Paste your LinkedIn post URL here...
+```
 
-Add the following credit note at the end of your post **(If you are DMI Cohort 3 student)**:
+### Credit Note — DMI Self-Paced Engineer Track Students
 
-> **P.S. This post is part of the DevOps Micro Internship (DMI) with Agentic AI — Cohort 3 — by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). My graded progress is public: https://dmi.pravinmishra.com/s/YOUR-GITHUB-USERNAME.html · Start your DevOps journey: https://dmi.pravinmishra.com/?utm_source=student&utm_medium=ps-blog&utm_campaign=cohort3**
+Add this credit note at the end of your public article. Replace `YOUR-GITHUB-USERNAME` with your actual GitHub username.
 
-**Tag [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/) in your LinkedIn post, then tag Lead Co-Mentor — [Anjana Muthunayake](https://www.linkedin.com/in/anjana-muthunayake/).**
+> **P.S. This post is part of the DevOps Micro Internship (DMI) — Self-Paced Engineer Track — by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). My graded progress is public:** https://dmi.pravinmishra.com/s/YOUR-GITHUB-USERNAME.html **· Start your DevOps journey:** https://dmi.pravinmishra.com/?utm_source=student&utm_medium=ps-blog&utm_campaign=self-paced
 
-Add the following credit note at the end of your post **(If you are DMI Self-paced track student)**:
+`#DMIByPravinMishra`
 
-> **P.S. This post is part of the DevOps Micro Internship (DMI) — Self-Paced Engineer Track — by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). My graded progress is public: https://dmi.pravinmishra.com/s/YOUR-GITHUB-USERNAME.html · Start your DevOps journey: https://dmi.pravinmishra.com/?utm_source=student&utm_medium=ps-blog&utm_campaign=self-paced**
+Tag [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/) in your LinkedIn post.
 
-Add the following credit note at the end of your post **(If you are DMI Campus student)**:
+### Credit Note — DMI Campus Students
 
-> **P.S. This post is part of the DevOps Micro Internship (DMI) — Campus — by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). My graded progress is public: https://dmi.pravinmishra.com/s/YOUR-GITHUB-USERNAME.html · Start your DevOps journey: https://dmi.pravinmishra.com/?utm_source=student&utm_medium=ps-blog&utm_campaign=campus**
+Add this credit note at the end of your public article. Replace `YOUR-GITHUB-USERNAME` with your actual GitHub username.
 
-**Tag [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/) in your LinkedIn post, then tag Lead Co-Mentor — [Anjana Muthunayake](https://www.linkedin.com/in/anjana-muthunayake/).**
+> **P.S. This post is part of the DevOps Micro Internship (DMI) — Campus — by [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/). My graded progress is public:** https://dmi.pravinmishra.com/s/YOUR-GITHUB-USERNAME.html **· Start your DevOps journey:** https://dmi.pravinmishra.com/?utm_source=student&utm_medium=ps-blog&utm_campaign=campus
 
-Hashtags:
+`#DMIByPravinMishra`
 
-#DMIByPravinMishra #AgenticAI #DevOps
+Tag [Pravin Mishra](https://www.linkedin.com/in/pravin-mishra-aws-trainer/) and Lead Co-Mentor [Anjana Muthunayake](https://www.linkedin.com/in/anjana-muthunayake/) in your LinkedIn post.
 
-## Your Article
+---
+
+## Task 4 — Reflection on Cutting Corners
+
+### Question
+
+Have you ever cut corners through unethical, dishonest, or shortcut behaviour (not necessarily illegal)? If yes, how did it make you feel?
+
+You do not need to tell the full story. Focus on the emotions you experienced. If your answer is yes, write **50–100 words**.
+
+### Your Answer
+
+**Yes / No:**
 
 **The Freelancer Who Automated His Way Into a New Career**
 
@@ -174,7 +138,7 @@ P.S. This post is a part of DevOps Micro Internship with Agentic AI Cohort-3 by 
 
 Paste your link here:
 
-`https://medium.com/p/d5fa960106a7?postPublishedType=initial`
+`Add your URL here`
 
 ---
 
@@ -232,43 +196,26 @@ Choose books that improve:
 
 ## Book List
 
-1. The Phoenix Project by Gene Kim
-2. The DevOps Handbook by Gene Kim
-3. Atomic Habits by James Clear
-4. Deep Work by Cal Newport
-5. Crucial Conversations by Kerry Patterson, Joseph Grenny, Ron McMillan, and Al Switzle
-6. The Lean Startup by Eric Ries
-7. Company of One by Paul Jarvis
-8. Profit First by Mike Michalowicz
-9. Why We Sleep by Matthew Walker
-10. Extreme Ownership by Jocko Willink and Leif Babin
+1. Add your answer here...
+2. Add your answer here...
+3. Add your answer here...
+4. Add your answer here...
+5. Add your answer here...
+6. Add your answer here...
+7. Add your answer here...
+8. Add your answer here...
+9. Add your answer here...
+10. Add your answer here...
 
 ---
 
-# Assignment 6. What are the things you will measure regularly in your life and career?
+## Task 6 — Your Life and Career Metrics
 
-### Rules
+List the things you will measure regularly in your life and career. You only need to list the metric topics; do not include personal numbers.
 
-List topics only. No need to share numbers.
+Your list must include learning or skills, output or proof, health or energy, time or focus, and money or finance.
 
-### Must Include
-
-* Learning / skill
-* Output / proof
-* Health / energy
-* Time / focus
-* Money / finance (personal or business)
-
-### Example
-
-* Learning hours per week
-* Deep work sessions per week
-* Projects shipped / documented
-* Steps / workouts
-* Sleep hours
-* Spending tracker
-
-## My Metrics
+### My Metrics
 
 * Savings or money set aside per month
 * Freelance income per month
@@ -283,9 +230,9 @@ List topics only. No need to share numbers.
 
 ---
 
-# Assignment 7. Brain Dump + 5-Month System Plan
+## Task 7 — Brain Dump and Three-Month System Plan
 
-## Step 1: Brain Dump (Private)
+### Step 1 — Brain Dump (Private)
 
 Do a brain dump of everything in your mind into a notebook.
 
@@ -305,7 +252,7 @@ Examples:
 
 Answer:
 
-Yes
+Add your answer here...
 
 ---
 
@@ -331,17 +278,13 @@ One evening, 2 to 3 hours: personal project work, building something small and s
 
 One full rest day with no scheduled learning or client work
 
----
-
-### Focus Blocks
-
-#### When Will You Do DMI Work? (Days + Time)
+#### When Will I Complete My DMI Work? (Include Days and Time)
 
 Mon-Thursday, 4-7pm
 
-#### How Many Sessions Per Week?
+#### How Many DMI Work Sessions Will I Complete Each Week?
 
-4 sessions per week 
+Add your answer here...
 
 ---
 
@@ -355,23 +298,21 @@ Examples:
 
 #### My Distraction Rules
 
-1. Turn off non-essential notifications on the laptop during focus blocks
-2. One tab or app open at a time during deep work, close everything else
-3. No phone during the  DevOps learning block
+Add your answer here...
 
 ---
 
-# Reflection – Week 1
+## Task 8 — Week 1 Reflection and Proof of Work
 
-### Biggest insight I got about myself this week
+### Biggest Insight I Got About Myself This Week
 
 I work in bursts far more naturally than I work in steady blocks. Every time I tried to force a rigid two-hour learning window, I hit a wall around forty minutes and started drifting. What actually worked was three shorter sessions spread through the day instead of one long one. I've been designing my schedule around who I think I should be instead of who I actually am.
 
-### My biggest weakness/loop I noticed
+### My Biggest Weakness or Loop I Noticed
 
 I finish one task and immediately open something unrelated to "just check" it, a client message, a proposal I sent, a random tab, before starting the next real task. It feels harmless in the moment but it's costing me the clean transition between tasks, and by the third or fourth time it happens in a day I've lost more time than I realize.
 
-### One system I will implement from this week (exact habit + time)
+### One System I Will Implement From This Week (Exact Habit and Time)
 
 Three 40-minute learning sessions instead of one long block, at 9am, 1pm, and 6pm, with a hard rule of no other tabs open during the transition between finishing one task and starting the next.
 
@@ -379,14 +320,14 @@ Three 40-minute learning sessions instead of one long block, at 9am, 1pm, and 6p
 
 Paste your LinkedIn post link here:
 
-`https://www.linkedin.com/posts/tonye-bagshaw_join-the-dmi-devops-micro-internship-share-7478104461274468352--tZQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck`
+`Add your URL here`
 
 ---
 
 ## 10. Proof of Work
 
-- LinkedIn Post URL: **[Linked In Post](https://www.linkedin.com/posts/tonye-bagshaw_join-the-dmi-devops-micro-internship-share-7478104461274468352--tZQ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck)**  
-- Blog / Medium : **[Medium Post](https://medium.com/p/d5fa960106a7?postPublishedType=initial)**  
+- LinkedIn Post URL: **ADD LINK HERE**  
+- Blog / Medium : **ADD LINK HERE**  
 
 ---
 
