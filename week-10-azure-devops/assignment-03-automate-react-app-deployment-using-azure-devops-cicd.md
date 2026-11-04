@@ -37,7 +37,7 @@ Add a screenshot of Azure Repos showing:
 * `main` branch
 * Project files
 
-Add your screenshot here.
+![alt text](screenshots/03.1.1-import.png)
 
 ---
 
@@ -81,7 +81,7 @@ Add a screenshot of the Azure Pipeline YAML open in the editor showing:
 * Publish stage
 * Deploy stage
 
-Add your screenshot here.
+![alt text](screenshots/03.4.1-MultiStage.png)
 
 > Do not expose passwords, private keys, tokens, or cloud credentials.
 
@@ -104,7 +104,7 @@ Add a screenshot of one Azure DevOps pipeline run showing all four stages succee
 * Publish
 * Deploy
 
-Add your screenshot here.
+![alt text](screenshots/03.5.1-pipeline.png)
 
 ---
 
@@ -122,7 +122,7 @@ Add a screenshot of the pipeline SSH verification log or VM terminal showing the
 
 `/var/www/html`
 
-Add your screenshot here.
+![alt text](screenshots/03.6.1-verify.png)
 
 ---
 
@@ -143,15 +143,15 @@ Add a browser screenshot showing:
 * Your Full Name
 * Deployment date
 
-Add your screenshot here.
+![alt text](screenshots/03.7.1-website.png)
 
 ## Final Application URL
 
-`http://<vm-public-ip>`
+`http://13.62.39.205`
 
 Replace the placeholder and paste your final application URL below:
 
-[Paste your final application URL here.]
+http://13.62.39.205
 
 ---
 
@@ -159,7 +159,11 @@ Replace the placeholder and paste your final application URL below:
 
 Write a short explanation of the CI/CD workflow you created.
 
-[Write your summary here.]
+In this assignment, I built a multi-stage CI/CD pipeline using Azure DevOps to automate the deployment of a React application to an Ubuntu virtual machine hosted on AWS or Azure. I used Terraform to provision the infrastructure and Ansible to configure the VM, install and configure Nginx, enable React single-page application routing, and set up deployment permissions.
+
+The Azure DevOps pipeline was designed with four stages: **Build, Test, Publish, and Deploy**. The Build stage installs dependencies and generates the production-ready React build. The Test stage runs the application tests, while the Publish stage publishes the build as a pipeline artifact. The Deploy stage downloads the artifact and transfers the production files to the VM through a secure SSH Service Connection, placing them in `/var/www/html` for Nginx to serve.
+
+The pipeline is configured to trigger automatically when changes are committed to the `main` branch. Finally, I verified the deployed files, checked Nginx, and tested the application through the VM's public IP address. This project strengthened my practical understanding of CI/CD pipelines, Infrastructure as Code, configuration management, artifact management, and automated cloud deployment.
 
 ---
 
@@ -174,11 +178,11 @@ Add a screenshot of your LinkedIn post showing:
 * Post text
 * At least one image or link
 
-Add your screenshot here.
+![alt text](screenshots/03.8.1-linkedin.png)
 
 ## LinkedIn Post URL
 
-[Paste your public LinkedIn post URL here.]
+https://lnkd.in/p/dgCAguJ4
 
 > Do not expose VM passwords, tokens, private keys, cloud credentials, or other sensitive information.
 

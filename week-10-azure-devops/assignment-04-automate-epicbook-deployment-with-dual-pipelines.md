@@ -70,7 +70,7 @@ Add a screenshot of the Infrastructure Pipeline run showing:
 * `backend_private_ip`
 * `mysql_fqdn`
 
-Add your screenshot here.
+![alt text](screenshots/04.4.1-output.png)
 
 > Do not expose the MySQL password, Client Secret, Terraform state, SSH private key, or another sensitive value.
 
@@ -86,7 +86,11 @@ Add a screenshot of the Azure Portal Resource Group overview showing:
 * Azure Database for MySQL Flexible Server
 * Related EpicBook resources
 
-Add your screenshot here.
+![alt text](screenshots/04.4.2.1-resources.png)
+
+![alt text](screenshots/04.4.2.2-resources.png)
+
+![alt text](screenshots/04.4.2.3-resources.png)
 
 > Hide sensitive IDs, credentials, and database details.
 
@@ -124,7 +128,7 @@ Run the Application Pipeline to configure the VMs, deploy EpicBook, and verify t
 
 Add a screenshot of the Application Pipeline run summary showing all required stages or jobs succeeded.
 
-Add your screenshot here.
+![alt text](screenshots/04.7.1-success.png)
 
 ---
 
@@ -137,7 +141,7 @@ Add a screenshot of the Application Pipeline log showing:
 * Zero failed hosts
 * Zero unreachable hosts
 
-Add your screenshot here.
+![alt text](screenshots/04.7.2-recap.png)
 
 > Do not expose the SSH private key, MySQL password, Client Secret, or complete database connection string.
 
@@ -162,7 +166,7 @@ Add a browser screenshot showing:
 
 The screenshot may show a product, cart, or successful order view.
 
-Add your screenshot here.
+![alt text](screenshots/04.8.1-website.png)
 
 > Do not expose credentials or sensitive information.
 
@@ -172,15 +176,15 @@ Add your screenshot here.
 
 ## Frontend Application URL
 
-[Paste your final EpicBook application URL here.]
+http://3.236.39.68
 
 ## Infrastructure Repository URL
 
-[Paste your Infrastructure Repository URL here.]
+[Infrastructure Repository URL](https://github.com/Viqshaw/infra-epicbook)
 
 ## Application Repository URL
 
-[Paste your Application Repository URL here.]
+[Application Repository URL](https://github.com/Viqshaw/theepicbook)
 
 ---
 
@@ -188,7 +192,15 @@ Add your screenshot here.
 
 Write a short explanation of why separate Infrastructure and Application Repositories were used.
 
-[Write your explanation here.]
+I used two separate repositories to establish a clear separation between infrastructure provisioning and application deployment.
+
+The Infrastructure Repository (infra-epicbook) contains the Terraform configuration responsible for provisioning and managing the cloud infrastructure, including virtual machines, networking, security groups, and database resources.
+
+The Application Repository (theepicbook) contains the EpicBook application source code, Ansible configuration, deployment tasks, and application pipeline.
+
+This separation makes the project easier to maintain, troubleshoot, and scale. Infrastructure changes can be planned and applied independently of application updates, while application deployments can be performed without unnecessarily modifying the underlying infrastructure.
+
+It also supports better access control, version management, and independent CI/CD workflows. Terraform handles infrastructure provisioning, while Ansible handles server configuration and application deployment.
 
 ---
 
@@ -201,7 +213,23 @@ Write a short explanation of how the following non-sensitive Terraform outputs w
 * `backend_private_ip`
 * `mysql_fqdn`
 
-[Write your explanation here.]
+After provisioning the infrastructure with Terraform, I retrieved the required non-sensitive outputs from the Infrastructure Pipeline.
+
+The outputs included:
+
+app_public_ip: The public IP address used to access the frontend server.
+
+backend_ansible_host: The host address used by Ansible to connect to the backend server.
+
+backend_private_ip: The backend server's private IP address, used for internal communication.
+
+mysql_fqdn: The database endpoint used by the application to connect to MySQL.
+
+I manually transferred these outputs into the appropriate Ansible inventory and application configuration files in the Application Repository.
+
+This handoff allowed Ansible to use the infrastructure created by Terraform without duplicating infrastructure configuration.
+
+Sensitive information, such as SSH private keys and database passwords, was handled separately through Azure DevOps Secure Files and secret pipeline variables rather than being committed to either GitHub repository.
 
 ---
 
@@ -220,7 +248,7 @@ Add your screenshot here.
 
 ## LinkedIn Post URL
 
-[Paste your public LinkedIn post URL here.]
+https://lnkd.in/p/dYGE8XfW
 
 Your post must include:
 

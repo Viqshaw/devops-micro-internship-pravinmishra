@@ -94,11 +94,11 @@ Week 07 → Azure Cloud
 Week 08 → Terraform
 [![Week 08 – Terraform](./badges/week-08.svg)](./week-08-terraform/)
 
-<!-- Week 09 → Ansible -->
-<!-- [![Week 09 – Ansible](./badges/week-09.svg)](./week-09-ansible/) -->
+Week 09 → Ansible
+[![Week 09 – Ansible](./badges/week-09.svg)](./week-09-ansible/)
 
-<!-- Week 10 → Azure DevOps CI/CD -->
-<!-- [![Week 10 – CI/CD](./badges/week-10.svg)](./week-10-azure-devops/) -->
+Week 10 → Azure DevOps CI/CD
+[![Week 10 – CI/CD](./badges/week-10.svg)](./week-10-azure-devops/)
 
 <!-- Week 11 → Docker -->
 <!-- [![Week 11 – Docker](./badges/week-11.svg)](./week-11-docker/) -->
@@ -139,8 +139,8 @@ Week 08 → Terraform
 | 06 | AWS Cloud | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_dmibypravinmishra-aws-agenticai-activity-7501416002589462528-eKI2?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/this-week-i-worked-on-an-aws-security-and-cost-audit-project-as-part-of-my-devops-micro-2357e9205f53?postPublishedType=initial |
 | 07 | Azure Cloud | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-azure-cloudsecurity-activity-7503747728506773505-BQdD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/this-week-i-built-an-ai-assisted-azure-security-posture-audit-as-part-of-the-devops-micro-396861519370 |
 | 08 | Terraform | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-aws-terraform-ugcPost-7508206426503389184-12qC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/this-project-reminded-me-that-in-devops-getting-something-to-work-is-only-part-of-the-job-0ade0c860cf4 |
-| 09 | Ansible | ⬜ Not Started | ⏳ Pending | — | — |
-| 10 | Azure DevOps (CI/CD) | ⬜ Not Started | ⏳ Pending | — | — |
+| 09 | Ansible | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_what-if-an-ai-agent-deleted-a-file-on-your-ugcPost-7523886907362111488-GXbZ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/from-it-works-on-my-machine-to-aws-my-hands-on-devops-journey-with-epicbook-6af1ff9a6437?postPublishedType=initial |
+| 10 | Azure DevOps (CI/CD) | ✅ Completed | ✅ Solved | https://www.linkedin.com/posts/tonye-bagshaw_devops-azuredevops-aws-ugcPost-7522652557740040192-kbp0/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZfZhcBxSczrU0SYBi3qw_ndXsq3CkHOck | https://medium.com/@vicshaw.vb/from-react-code-to-a-live-website-building-a-ci-cd-pipeline-with-azure-devops-96475e5e85ec |
 | 11 | Docker | ⬜ Not Started | ⏳ Pending | — | — |
 | 12 | Kubernetes | ⬜ Not Started | ⏳ Pending | — | — |
 | 13 | Final Project | ⬜ Not Started | ⏳ Pending | — | — |

@@ -42,17 +42,19 @@ Confirm that both EpicBook pipelines are healthy and place the supplied assignme
 
 Terminal output showing the latest completed Infrastructure and Application Pipeline runs with successful results.
 
-Add your screenshot here.
+![alt text](screenshots/05.1.1-healthy.png)
 
 ## Notes
 
 ### 1. What proves that both pipelines were healthy before the drill?
 
-[Write your answer here.]
+Both Infrastructure and Application pipelines must have completed successfully in Azure DevOps, with their latest completed runs showing succeeded. The pipeline health report should also show HEALTHY, with exit code 0 and no warnings or failures.
 
 ### 2. Why is a healthy baseline necessary before introducing a controlled failure?
 
-[Write your answer here.]
+A healthy baseline establishes that both pipelines were functioning correctly before the incident. It provides a reference point for comparing the environment before and after the controlled failure.
+
+Without it, I might incorrectly attribute an existing issue to the deliberate failure.
 
 ---
 
@@ -68,21 +70,37 @@ Configure the supplied project context and verify the safety boundaries Claude m
 
 `CLAUDE.md` open in the editor with the Project Overview, Incident Workflow, Safety Rules, and Output Rules visible.
 
-Add your screenshot here.
+![alt text](screenshots/05.2.1-claudemd.png)
 
 ## Notes
 
 ### 1. Why does Claude need project-specific operational context?
 
+Claude needs project-specific context to understand the EpicBook architecture, the two Azure DevOps pipelines, their responsibilities, and the expected troubleshooting workflow.
+
+This helps Claude interpret pipeline evidence accurately instead of making generic assumptions about the infrastructure or application.
 [Write your answer here.]
 
 ### 2. Which rules keep the human responsible for the recovery action?
 
-[Write your answer here.]
+The assignment follows the workflow:
+Gather
+
+Analyze
+
+Approve
+
+Verify
+
+
+Claude gathers and analyzes evidence. A human reviews and applies recovery actions before verification.
+Claude must not automatically modify pipeline configurations, edit application code, push commits, approve deployments, or rerun pipelines. It can recommend a fix, but the engineer must review and apply it.
 
 ### 3. Which rules protect pipeline credentials and application secrets?
 
-[Write your answer here.]
+The workflow protects secrets by avoiding hardcoded credentials, keeping tokens out of reports, sanitizing downloaded logs, and preventing Claude from displaying sensitive environment variables.
+
+PATs, passwords, SSH private keys, database credentials, and authorization headers must never appear in the final incident report or public repository.
 
 ---
 
@@ -98,7 +116,7 @@ Configure the supplied Bash script and verify that it retrieves and classifies e
 
 Editor showing the script configuration variables, report filenames, check-function array, and read-only log-retrieval functions. Ensure that no token is visible.
 
-Add your screenshot here.
+![alt text](screenshots/05.3.1-triage.png)
 
 ---
 
@@ -106,29 +124,52 @@ Add your screenshot here.
 
 Terminal showing successful Bash syntax validation and executable file permission.
 
-Add your screenshot here.
+![alt text](screenshots/05.3.2-exec.png)
 
 ## Notes
 
 ### 1. Why are pipeline metadata and step console logs handled separately?
 
-[Write your answer here.]
+Pipeline metadata provides high-level information such as the pipeline name, run ID, status, result, branch, and completion time.
+
+Console logs provide detailed evidence about what happened during individual pipeline steps.
+
+Separating them allows the script to identify whether a pipeline failed before analyzing the specific technical cause.
 
 ### 2. How does the script obtain the actual console logs?
 
-[Write your answer here.]
+The Bash script uses Azure DevOps REST APIs to retrieve the latest completed build, request the list of associated log IDs, and download each step's console log.
+
+The downloaded logs are combined, sanitized, and saved as:
+- reports/infra-last-run.log
+- reports/app-last-run.log
 
 ### 3. How does the check-function array control the classification loop?
 
-[Write your answer here.]
+The CHECK_FUNCTIONS array defines the checks the script performs and their execution order.
+
+These checks cover dependency installation, compilation, testing, authentication, agent availability, Terraform, and Ansible/Nginx deployment errors.
+
+The script loops through the array and executes each function against the sanitized logs of failed runs.
 
 ### 4. What prevents a failed but unmatched run from being reported as healthy?
 
-[Write your answer here.]
+The check_unclassified_failure() function handles this situation.
+
+If Azure DevOps reports that a run failed but none of the known failure patterns match, the script records an Unclassified Pipeline Failure.
+
+The run remains classified as failed rather than healthy.
 
 ### 5. Why are different exit codes useful to another automation tool?
 
-[Write your answer here.]
+Exit codes allow other tools to understand the result without manually interpreting the entire report.
+Exit code	Meaning
+0	Healthy
+1	Warning or incomplete state
+2	Pipeline failure
+3	Configuration, authentication, API, or log-retrieval error
+
+For example, Claude Code can distinguish an actual deployment failure from an authentication problem and recommend the appropriate next step.
 
 ---
 
@@ -144,17 +185,21 @@ Run the supplied script against the healthy baseline and verify the initial pipe
 
 Healthy pipeline report showing your Full Name, both successful pipelines, Overall Status `HEALTHY`, and captured exit code `0`.
 
-Add your screenshot here.
+![alt text](screenshots/05.4.1-healthystate.png)
 
 ## Notes
 
 ### 1. What evidence proves that both pipelines are healthy?
 
-[Write your answer here.]
+The health report must show both pipelines' latest completed runs as succeeded, successful log retrieval, no warnings or failures, and an overall status of HEALTHY.
+
+The script should return exit code 0.
 
 ### 2. Why must the baseline exit code be verified before the incident drill?
 
-[Write your answer here.]
+Verifying exit code 0 confirms that the triage workflow can recognize a healthy environment.
+
+It also validates the script's authentication, API access, evidence collection, and health evaluation before introducing a deliberate failure.
 
 ---
 
@@ -170,7 +215,7 @@ Configure the supplied Claude Code skill and verify that it runs the Bash tool a
 
 `SKILL.md` showing the frontmatter, manual-invocation setting, narrowly scoped tools, safety rules, and required output structure.
 
-Add your screenshot here.
+![alt text](screenshots/05.5.1-skillmd.png)
 
 ---
 
@@ -178,25 +223,33 @@ Add your screenshot here.
 
 Healthy `/pipeline-triage` result showing that both pipelines are healthy and no fix is required.
 
-Add your screenshot here.
+![alt text](screenshots/05.5.2-healthy.png)
 
 ## Notes
 
 ### 1. Why is `disable-model-invocation: true` appropriate for this skill?
 
-[Write your answer here.]
+This setting prevents Claude from automatically invoking the skill based on its interpretation of the conversation.
+
+Pipeline triage should be initiated deliberately by the engineer using /pipeline-triage, ensuring that the workflow runs only when requested.
 
 ### 2. Why should the skill avoid broad Bash approval?
 
-[Write your answer here.]
+Broad Bash approval could allow Claude to execute commands beyond the intended read-only diagnostic workflow.
+
+Restricting permissions reduces the risk of accidental infrastructure changes, unauthorized deployments, credential exposure, or destructive operations.
 
 ### 3. What work is performed by Bash, and what work is performed by Claude?
 
-[Write your answer here.]
+Bash performs deterministic tasks such as authenticating, querying Azure DevOps APIs, retrieving logs, sanitizing sensitive information, classifying failure patterns, and generating reports.
+
+Claude interprets the collected evidence, explains the likely root cause, recommends a recovery action, and provides a verification step.
 
 ### 4. Why are permission rules required in addition to written safety instructions?
 
-[Write your answer here.]
+Written instructions describe expected behavior, but permission rules provide an additional technical boundary.
+
+Even if Claude misinterprets an instruction, restricted tool permissions can prevent it from executing commands outside the approved workflow.
 
 ---
 
@@ -212,25 +265,25 @@ Create a controlled Application Pipeline failure that can be diagnosed without c
 
 Failed Application Pipeline run showing the temporary branch, failed status, failed step, and relevant non-sensitive error evidence.
 
-Add your screenshot here.
+![alt text](screenshots/05.6.1-fail.png)
 
 ## Notes
 
 ### 1. What exact failure did you introduce?
 
-[Write your answer here.]
+On a temporary branch drill/pipeline-failure, I first added a pre-deploy "Dependency check (npm ci)" step to the Application Pipeline's Validate stage. Then, in a separate commit marked "DRILL", I added a dependency that doesn't exist, "epicbook-drill-missing-pkg": "^9.9.9", to package.json. When the pipeline ran npm ci, it couldn't install that package, and the step failed with npm ERR! errors.
 
 ### 2. Which category should detect it?
 
-[Write your answer here.]
+Dependency installation failure. The log contains npm ERR! lines, which the script's check_dependency_failure pattern matches.
 
 ### 3. Why is the failure safe and easily reversible?
 
-[Write your answer here.]
+The failing step runs only on the pipeline agent, in a temporary working folder, during the Validate stage. Because Validate failed, the Deploy and Verify stages were skipped. Ansible never connected to the VMs, the database and live site were untouched, and no Terraform, credentials, NSGs or Azure resources changed. Undoing it is a one-line revert of the DRILL commit.
 
 ### 4. How did you prevent the deliberate failure from reaching `main` or changing the deployed application?
 
-[Write your answer here.]
+All changes live only on drill/pipeline-failure. The pipeline's automatic trigger is limited to main, so I queued this run manually against the drill branch, and I didn't open a pull request. The failure happens in Validate, before the Deploy stage, so the application running on the frontend and backend VMs stayed exactly as deployed from main.
 
 ---
 
@@ -246,25 +299,25 @@ Use `/pipeline-triage` to classify the failed Application Pipeline without allow
 
 `/pipeline-triage` output and saved incident report showing the affected pipeline, failure category, sanitized evidence, recommendation, and your Full Name.
 
-Add your screenshot here.
+![alt text](screenshots/05.7.1-Failed-State.png)
 
 ## Notes
 
 ### 1. Which failure category was identified?
 
-[Write your answer here.]
+Dependency installation failure in the EpicBook-App-Pipeline (run 13, branch drill/pipeline-failure, failed step "Dependency check (npm ci)"). The Infrastructure Pipeline stayed healthy.
 
 ### 2. What exact evidence supported the diagnosis?
 
-[Write your answer here.]
+The failed step's console log, downloaded through the Build Logs API: npm ERR! code E404, npm ERR! 404 Not Found - GET https://registry.npmjs.org/epicbook-drill-missing-pkg and npm ERR! 404 'epicbook-drill-missing-pkg@^9.9.9' is not in this registry, followed by Bash exited with code '1'. Claude also pointed out it was a 404, not a 401 or 403, which ruled out an authentication problem.
 
 ### 3. Did Claude apply the fix or rerun the pipeline? Why is that important?
 
-[Write your answer here.]
+No. Claude ended with "I made no changes to any file, pipeline, or Azure resource." It recommended the fix and left applying it to me. That matters because a pipeline has access to credentials, infrastructure and production. Keeping the change with a human means someone who understands the context checks the recommendation first, and every change is deliberate and traceable to a person.
 
 ### 4. Which part represents Gather, and which part represents Analyze?
 
-[Write your answer here.]
+Gather is ./pipeline-triage.sh: it reads both pipelines' metadata and console logs through the read-only Azure DevOps API, classifies the failure and writes the report with exit code 2. Analyze is Claude inside /pipeline-triage: it reads the report and log evidence, explains the likely cause, rules out other categories, and recommends one fix and one verification step.
 
 ---
 
@@ -280,7 +333,7 @@ Apply the recommended fix manually and verify that the Application Pipeline and 
 
 Corrected Application Pipeline run showing the temporary branch and successful status.
 
-Add your screenshot here.
+
 
 ---
 
@@ -288,29 +341,29 @@ Add your screenshot here.
 
 Recovery `/pipeline-triage` output showing Overall Status `HEALTHY`, exit code `0`, your Full Name, and both saved report filenames.
 
-Add your screenshot here.
+
 
 ## Notes
 
 ### 1. What exact fix did you apply?
 
-[Write your answer here.]
+On drill/pipeline-failure I ran git revert on the DRILL commit, which removed "epicbook-drill-missing-pkg": "^9.9.9" from package.json. I checked that the package name no longer appears in the file, committed it as 2c8b4fd, pushed the branch, and queued the Application Pipeline against it manually. The pre-deploy dependency-check step stayed in place.
 
 ### 2. Did the fix match Claude’s recommendation? Explain briefly.
 
-[Write your answer here.]
+Yes. Claude recommended removing the epicbook-drill-missing-pkg entry from package.json and pushing, which is exactly what the revert did. It also suggested regenerating package-lock.json, but that wasn't needed: the drill never changed the lock file, so reverting package.json alone brought the two back in sync. I reviewed the recommendation against the log evidence before acting, and I applied the change myself.
 
 ### 3. What evidence proves that the pipeline recovered?
 
-[Write your answer here.]
+Run #20260928.2 (ID 14) of EpicBook-App-Pipeline on drill/pipeline-failure at commit 2c8b4fd succeeded in all three stages: Ansible Validate (including the dependency check), Configure VMs & Deploy EpicBook, and Verify EpicBook. The second /pipeline-triage run reported Overall Status HEALTHY with exit code 0 and all 16 checks passing, and I saved it as reports/recovery-report.txt.
 
 ### 4. Why is a second triage run required after the pipeline becomes green?
 
-[Write your answer here.]
+A green run only proves that pipeline passed. The second triage run checks both pipelines with the same rules as the incident, confirms that the specific dependency failure is gone and that no new warning or error appeared, and produces an exit code (0) that automation can trust. It also gives me a saved recovery report to compare with the incident report, which closes the Gather → Analyze → Human Act → Verify loop.
 
 ### 5. What risk would be created if Claude could automatically edit, push, approve, and rerun the pipeline?
 
-[Write your answer here.]
+Diagnosis and change would merge into one unchecked step. A wrong or partial diagnosis could be pushed straight into a pipeline that has access to cloud credentials, infrastructure and production. It might loop through retries, approve a deployment it shouldn't, or hide the real problem, and no human would have reviewed the change. Keeping Claude read-only means every change is deliberate, reviewed and traceable to a person.
 
 ---
 
@@ -318,7 +371,7 @@ Add your screenshot here.
 
 ## LinkedIn Post URL
 
-[Paste your public LinkedIn post URL here.]
+https://lnkd.in/p/dqkNpbTW
 
 ## Evidence
 
@@ -326,7 +379,7 @@ Add your screenshot here.
 
 Published LinkedIn post showing its text and at least one image or link.
 
-Add your screenshot here.
+![alt text](screenshots/05.9.1-linkedin.png)
 
 ---
 
