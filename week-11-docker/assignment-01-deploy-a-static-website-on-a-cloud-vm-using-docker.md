@@ -28,7 +28,7 @@ Add a screenshot of the cloud console showing:
 - SSH port 22 enabled from your IP address
 - HTTP port 80 enabled from Anywhere
 
-Add your screenshot here.
+![alt text](screenshots/01.1.1-ec2.png)
 
 ---
 
@@ -50,7 +50,7 @@ cat /var/log/cloud-init-output.log
 
 The visible output must show Docker installation activity.
 
-Add your screenshot here.
+![alt text](screenshots/01.2.1-CloudInit.png)
 
 ---
 
@@ -76,7 +76,7 @@ and
 docker ps
 ```
 
-Add your screenshot here.
+![alt text](screenshots/01.3.1-DockerV.png)
 
 ---
 
@@ -92,7 +92,7 @@ Download the static website source code.
 
 Add a screenshot of the terminal showing the contents of the `Azure-Static-Website` project directory after cloning the repository.
 
-Add your screenshot here.
+![alt text](screenshots/01.4.1-clone.png)
 
 ---
 
@@ -114,7 +114,7 @@ cat Dockerfile
 
 The Dockerfile must use `nginx:alpine`, copy the website files to the Nginx web root, and expose port 80.
 
-Add your screenshot here.
+![alt text](screenshots/01.5.1-Dockerfile.png)
 
 ---
 
@@ -136,7 +136,7 @@ docker images
 
 The output must include the `static-site` image with the `latest` tag.
 
-Add your screenshot here.
+![alt text](screenshots/01.6.1-images.png)
 
 ---
 
@@ -162,7 +162,7 @@ The output must show the running `static-site` container with the port mapping:
 0.0.0.0:80->80/tcp
 ```
 
-Add your screenshot here.
+![alt text](screenshots/01.7.1-ps.png)
 
 ---
 
@@ -182,7 +182,7 @@ Add a screenshot of the terminal showing the output of:
 curl ifconfig.me
 ```
 
-Add your screenshot here.
+![alt text](screenshots/01.8.1-ifconfig.png)
 
 ---
 
@@ -192,14 +192,13 @@ Add a screenshot of the browser showing the deployed static website.
 
 Ensure that the VM public IP address is visible in the browser address bar.
 
-Add your screenshot here.
+![alt text](screenshots/01.8.2-browser.png)
 
 ---
 
 # Public Application URL
 
-**VM Public IP / Application URL:** `Add your application URL here`
-
+**VM Public IP / Application URL:** `Add your application URL herev
 ---
 
 # LinkedIn Requirement
@@ -210,11 +209,11 @@ Create a LinkedIn post describing what you deployed, the deployment process, and
 
 ### Evidence
 
-**LinkedIn Post URL:** `Add your LinkedIn Post URL here`
+**LinkedIn Post URL:** `https://lnkd.in/p/dtztubJ7`
 
 #### LinkedIn Post Screenshot
 
-Add a screenshot of the published LinkedIn post here.
+![alt text](screenshots/01.9.1-linkedin.png)
 
 ---
 
