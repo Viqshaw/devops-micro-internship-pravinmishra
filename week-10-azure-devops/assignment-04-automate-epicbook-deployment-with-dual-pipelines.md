@@ -244,7 +244,7 @@ Add a screenshot of your LinkedIn post showing:
 * Post text
 * At least one image or link
 
-Add your screenshot here.
+![alt text](screenshots/04.9.1-linkedin.png)
 
 ## LinkedIn Post URL
 

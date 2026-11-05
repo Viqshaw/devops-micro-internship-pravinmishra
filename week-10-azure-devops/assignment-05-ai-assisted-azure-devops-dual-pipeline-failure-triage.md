@@ -79,7 +79,7 @@ Configure the supplied project context and verify the safety boundaries Claude m
 Claude needs project-specific context to understand the EpicBook architecture, the two Azure DevOps pipelines, their responsibilities, and the expected troubleshooting workflow.
 
 This helps Claude interpret pipeline evidence accurately instead of making generic assumptions about the infrastructure or application.
-[Write your answer here.]
+
 
 ### 2. Which rules keep the human responsible for the recovery action?
 
