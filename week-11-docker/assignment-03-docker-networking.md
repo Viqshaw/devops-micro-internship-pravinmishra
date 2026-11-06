@@ -28,7 +28,7 @@ docker network ls
 
 The output must include the default `bridge`, `host`, and `none` networks.
 
-Add your screenshot here.
+![alt text](screenshots/03.1.1-network.png)
 
 ---
 
@@ -40,7 +40,7 @@ Add a screenshot of the terminal showing successful completion of:
 docker pull nginx:alpine
 ```
 
-Add your screenshot here.
+![alt text](screenshots/03.1.2-pull.png)
 
 ---
 
@@ -58,7 +58,7 @@ The output must show the running `myweb` container with:
 0.0.0.0:80->80/tcp
 ```
 
-Add your screenshot here.
+![alt text](screenshots/03.1.3-ps.png)
 
 ---
 
@@ -72,7 +72,7 @@ http://<YOUR-VM-PUBLIC-IP>
 
 Ensure that the VM public IP is visible in the address bar. Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![alt text](screenshots/03.1.4-browser.png)
 
 ---
 
@@ -92,7 +92,7 @@ Add a screenshot of the terminal showing `mynetwork` in:
 docker network ls
 ```
 
-Add your screenshot here.
+![alt text](screenshots/03.2.1-network.png)
 
 ---
 
@@ -106,7 +106,7 @@ docker ps
 
 The output must show both `web` and `client` containers running without published host ports.
 
-Add your screenshot here.
+![alt text](screenshots/03.2.2-ps.png)
 
 ---
 
@@ -120,7 +120,7 @@ docker exec client wget -qO- http://web
 
 The output must display the Nginx Welcome Page HTML.
 
-Add your screenshot here.
+![alt text](screenshots/03.2.3-exec.png)
 
 ---
 
@@ -134,7 +134,7 @@ docker network inspect mynetwork
 
 The output must show both `web` and `client` connected to `mynetwork`.
 
-Add your screenshot here.
+![alt text](screenshots/03.2.4-inspect.png)
 
 ---
 
@@ -156,7 +156,7 @@ docker network ls
 
 The output must include both `frontend-network` and `backend-network`.
 
-Add your screenshot here.
+![alt text](screenshots/03.3.1-network.png)
 
 ---
 
@@ -174,7 +174,7 @@ The output must show:
 - `backend` without a published host port
 - `db` without a published host port
 
-Add your screenshot here.
+![alt text](screenshots/03.3.2-ps.png)
 
 ---
 
@@ -188,7 +188,7 @@ docker network inspect frontend-network
 
 The output must show `frontend` and `backend`.
 
-Add your screenshot here.
+![alt text](screenshots/03.3.3-frontend.png)
 
 ---
 
@@ -202,7 +202,7 @@ docker network inspect backend-network
 
 The output must show `backend` and `db`.
 
-Add your screenshot here.
+![alt text](screenshots/03.3.4-backend.png)
 
 ---
 
@@ -216,7 +216,7 @@ docker exec frontend wget -qO- http://backend
 
 The output must display the Nginx Welcome Page HTML.
 
-Add your screenshot here.
+![alt text](screenshots/03.3.5-f2b.png)
 
 ---
 
@@ -224,7 +224,7 @@ Add your screenshot here.
 
 Add a screenshot of the terminal showing a successful connection to `db` on port `27017` from the `backend` container.
 
-Add your screenshot here.
+![alt text](screenshots/03.3.6-b2db.png)
 
 ---
 
@@ -238,7 +238,7 @@ The output must include:
 Expected result: frontend cannot reach db
 ```
 
-Add your screenshot here.
+![alt text](screenshots/03.3.7-f2db.png)
 
 ---
 
@@ -252,7 +252,7 @@ http://<YOUR-VM-PUBLIC-IP>
 
 Ensure that the VM public IP is visible in the address bar. Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![alt text](screenshots/03.3.8-browser.png)
 
 ---
 
@@ -274,7 +274,7 @@ docker ps
 
 The output must show the running `fastapp` container.
 
-Add your screenshot here.
+![alt text](screenshots/03.4.1-ps.png)
 
 ---
 
@@ -292,7 +292,7 @@ The output must confirm:
 "NetworkMode": "host"
 ```
 
-Add your screenshot here.
+![alt text](screenshots/03.4.2-networkmode.png)
 
 ---
 
@@ -306,7 +306,7 @@ http://<YOUR-VM-PUBLIC-IP>
 
 Ensure that the VM public IP is visible in the address bar. Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![alt text](screenshots/03.4.3-browser.png)
 
 ---
 
@@ -319,7 +319,7 @@ docker stop fastapp
 docker rm fastapp
 ```
 
-Add your screenshot here.
+![alt text](screenshots/03.4.4-cleanup.png)
 
 ---
 
@@ -332,7 +332,22 @@ Write a short note explaining:
 - Why the frontend could not access the database in Task 3
 - The difference between bridge mode and host network mode
 
-Write your note here.
+1. Default Bridge Networking
+
+Docker's default bridge network is automatically created when Docker is installed. Containers connected to this network can communicate with each other using their IP addresses. However, they cannot reliably communicate using container names because the default bridge does not provide automatic DNS resolution.
+
+2. Container-Name Communication on a Custom Bridge Network
+
+A custom bridge network allows containers to communicate using their container names instead of IP addresses. Docker provides automatic DNS resolution, making it easier for services such as frontend applications and databases to discover and communicate with each other. For example, a frontend container can connect to a database using mysql:3306.
+
+3. Why the Frontend Could Not Access the Database in Task 3
+
+The frontend could not access the database because the containers were not properly connected through the same Docker network. They may have been running on separate networks, preventing direct communication. Connecting both containers to the same custom bridge network allows the frontend to reach the database using its container name and database port.
+
+4. Difference Between Bridge Mode and Host Network Mode
+- Bridge mode: Creates an isolated network for containers. Containers use their own IP addresses, and ports must be published using -p to allow access from outside the container.
+- Host mode: Shares the host machine's network stack directly. Containers use the host's network interfaces and IP address, so port mapping is unnecessary. However, this reduces network isolation and can cause port conflicts.
+Conclusion: Custom bridge networking is generally recommended for multi-container applications because it provides network isolation, automatic DNS resolution, and straightforward communication between services.
 
 ---
 
@@ -348,13 +363,13 @@ Create a LinkedIn post about the Docker networking modes explored, one key lesso
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+`https://lnkd.in/p/daF-v5AM`
 
 ---
 
 #### LinkedIn Post Screenshot
 
-Add a screenshot of the published LinkedIn post here.
+![alt text](screenshots/03.5.1-linkedin.png)
 
 ---
 
