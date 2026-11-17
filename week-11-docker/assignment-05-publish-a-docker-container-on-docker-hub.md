@@ -26,7 +26,7 @@ Add a screenshot of Docker Hub showing your newly created public repository:
 my-react-app
 ```
 
-Add your screenshot here.
+![alt text](screenshots/05.1.1-repo.png)
 
 ---
 
@@ -40,7 +40,7 @@ Login Succeeded
 
 Ensure that your full name is visible and that no password, Personal Access Token, or device code is exposed.
 
-Add your screenshot here.
+![alt text](screenshots/05.1.2-login.png)
 
 ---
 
@@ -54,7 +54,7 @@ docker image ls <YOUR_DOCKERHUB_USERNAME>/my-react-app
 
 The output must show the `latest` tag.
 
-Add your screenshot here.
+![alt text](screenshots/05.1.3-tag.png)
 
 ---
 
@@ -68,7 +68,7 @@ docker push <YOUR_DOCKERHUB_USERNAME>/my-react-app:latest
 
 The output must include a pushed status or image digest.
 
-Add your screenshot here.
+![alt text](screenshots/05.1.4-push.png)
 
 ---
 
@@ -76,7 +76,7 @@ Add your screenshot here.
 
 Add a screenshot of your Docker Hub repository showing the uploaded `latest` image tag.
 
-Add your screenshot here.
+![alt text](screenshots/05.1.5-repo.png)
 
 ---
 
@@ -88,7 +88,7 @@ Add a screenshot of the terminal showing:
 - Successful `docker pull` output
 - `docker image ls` showing the pulled image
 
-Add your screenshot here.
+![alt text](screenshots/05.1.6-redo.png)
 
 ---
 
@@ -106,7 +106,7 @@ The output must show the running `react-container` with:
 0.0.0.0:80->80/tcp
 ```
 
-Add your screenshot here.
+![alt text](screenshots/05.1.7-ps.png)
 
 ---
 
@@ -120,13 +120,13 @@ http://<YOUR-VM-PUBLIC-IP>
 
 Ensure that the VM public IP is visible in the address bar. Add your full name as a clear caption directly below the screenshot.
 
-Add your screenshot here.
+![alt text](screenshots/05.1.8-browser.png)
 
 ---
 
 # Docker Hub Repository URL
 
-**Repository URL:** `Add your Docker Hub repository URL here`
+**Repository URL:** `https://hub.docker.com/repository/docker/viqshaw/my-react-app/general`
 
 ---
 
@@ -138,7 +138,17 @@ Write a short explanation covering:
 - Why a container registry is useful in DevOps workflows
 - Why production deployments should use versioned image tags instead of relying only on `latest`
 
-Write your explanation here.
+1. Why image tagging is required before pushing to Docker Hub
+
+Image tagging identifies an image with a specific name and version, making it easier to recognize and manage. Before pushing to Docker Hub, the image must be tagged with the correct repository name and namespace so Docker knows where to upload it.
+
+2. Why a container registry is useful in DevOps workflows
+
+A container registry, such as Docker Hub, provides a central location to store, manage, and share Docker images. It allows developers and DevOps teams to access the same application images across development, testing, and production environments, making deployments more consistent and efficient.
+
+3. Why production deployments should use versioned image tags instead of relying only on latest
+
+Using versioned tags, such as v1.0, v1.1, or v2.0, makes it easier to identify exactly which image is deployed. The latest tag can point to different image versions over time, making deployments less predictable. Versioned tags improve traceability, make rollbacks easier, and help ensure that production environments run the intended application version.
 
 ---
 
@@ -162,13 +172,13 @@ Include:
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+`https://lnkd.in/p/dRcryzYX`
 
 ---
 
 #### LinkedIn Post Screenshot
 
-Add a screenshot of the published LinkedIn post here.
+![alt text](screenshots/05.1.9-linkedin.png)
 
 ---
 
